@@ -10,13 +10,11 @@
 
 ## ✨ About Me  
 
-I started coding with a simple but powerful mission: **to change lives through technology**.  
+I started coding with a clear mission: **to use technology to change lives**.  
 
-Growing up in Nigeria, I saw how many businesses and communities struggle without access to the right digital tools. That inspired me to begin building products that **empower people, solve local challenges, and scale globally**.  
+Growing up in Nigeria, I witnessed how communities and businesses struggled without the right digital tools. That inspired me to start building solutions that **empower people locally while scaling globally**.  
 
-🌍 My dream is to create some of the **best products in Africa and beyond** — platforms that drive financial inclusion, make markets fairer, and connect people to opportunities.  
-
-💡 Every line of code I write is a step toward that vision. Whether it’s building a cooperative app, a secure marketplace, or a scalable API, my goal is always the same: **use technology as a force for good**.  
+🌍 My focus is on creating impactful products — from financial inclusion platforms to secure marketplaces — that make everyday life better.  
 
 ---
 
@@ -36,10 +34,13 @@ Growing up in Nigeria, I saw how many businesses and communities struggle withou
 
 ## 📌 Featured Projects  
 
-- 🏦 **Naija Co-op Hub** – A digital cooperative platform for financial inclusion.  
-- 🎉 **JosEventia** – Secure, escrow-backed marketplace for event vendors *(private, ongoing)*.  
-- 🛍 **Thriftbyzee** – Responsive business website for a fashion brand.  
-- 📦 [**Items API**](https://github.com/Gwerdonatus/items-api) – Django REST Framework project with authentication & CI.  
+- 🏦 **Naija Co-op Hub** – Digitizing *Adashe/Esusu* savings to promote **financial inclusion**, group investments, and peer-to-peer lending in Nigerian communities. *(Django, Paystack integration, chat, marketplace).*  
+
+- 🎉 **JosEventia** – Escrow-backed marketplace for event vendors in Nigeria, built to foster **trust, transparency, and seamless booking/payments**. *(Django, Paystack, Vendor Profiles).*  
+
+- 🛍 **Thriftbyzee** – Responsive e-commerce website for a fashion brand, improving client’s digital presence and customer engagement. *(Django, Bootstrap, JavaScript).*  
+
+- 📦 [**Items API**](https://github.com/Gwerdonatus/items-api) – REST API with token authentication, CRUD, and GitHub Actions CI. Demonstrates **testing and automation skills**.  
 
 ---
 
@@ -52,8 +53,9 @@ Growing up in Nigeria, I saw how many businesses and communities struggle withou
 ---
 
 ## 🌱 Currently Exploring  
-- Advanced Django (async, channels, scalable architecture)  
-- Building secure fintech and marketplace apps  
+- Scaling Django with **async & Channels**  
+- Secure **payment integrations** (Paystack, Stripe)  
+- Microservices & **cloud deployments** (Vercel, Cloudflare, AWS)  
 
 ---
 
