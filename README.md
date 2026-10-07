@@ -21,19 +21,19 @@ Explores transaction intake, settlement, and reconciliation as a backend system.
 
 ### 3. [drift-recon](https://github.com/Gwerdonatus/drift-recon) — Reconciliation and drift detection
 
-Helps identify discrepancies between financial data sources. The FastAPI service separates ingestion from a deterministic weighted matcher, prevents duplicate match assignments, and quarantines invalid CSV rows. PostgreSQL upserts, persistent scheduled jobs, API-key checks, structured logs, matcher/ingestion tests, and container deployment scripts support repeatable operation. CI and operational documentation need further work.
+Helps identify discrepancies between financial data sources. The FastAPI service separates ingestion from a deterministic weighted matcher, prevents duplicate match assignments, and quarantines invalid CSV rows. PostgreSQL upserts, persistent scheduled jobs, API-key checks, structured logs, and operational runbooks support repeatable operation. Its green CI builds both API and dashboard images and runs 68 tests with a 70% coverage gate.
 
 ### 4. [FinOps](https://github.com/Gwerdonatus/FinOps) — Refund and dispute operations
 
-Organizes financial support work around workspaces, case status, and SLA risk. Django modules handle Stripe synchronization, refund/dispute workflows, alerts, and CSV/PDF evidence exports. Encrypted integration credentials and workspace membership checks establish security boundaries; tests cover access isolation and exports. Background automation, CI, and provider integration validation are the next maturity steps.
+Organizes financial support work around workspaces, case status, and SLA risk. Django modules handle Stripe synchronization, refund/dispute workflows, alerts, and CSV/PDF evidence exports. Encrypted integration credentials, workspace membership checks, POST-only mutations, and CSRF protection establish security boundaries. Its Python 3.11/3.12 CI verifies access isolation, exports, risk calculations, and workflow safety with a coverage gate.
 
 ### 5. [Ledgerlens-recon](https://github.com/Gwerdonatus/Ledgerlens-recon) — Focused payment reconciliation tool
 
-Compares processor records with internal ledger data and produces actionable discrepancy reports. A small Python CLI keeps matching separate from Stripe/CSV/database adapters and Excel output, classifying missing records, amount mismatches, and matches deterministically. A matcher test and structured JSON logging provide a foundation for validation and diagnostics. This is scoped demonstration tooling, with broader edge-case coverage still needed.
+Compares processor records with internal ledger data and produces actionable discrepancy reports. The Python CLI keeps matching separate from Stripe/CSV/database adapters and Excel output, using exact Decimal arithmetic, currency-aware Stripe minor units, bounded cursor pagination, duplicate detection, and deterministic classification. CI covers Python 3.10–3.12, packaging, formatting, linting, and 21 tests with an 80% coverage gate.
 
 ### 6. [alerts-monitoring-dashboard](https://github.com/Gwerdonatus/alerts-monitoring-dashboard) — Operational alerts interface
 
-A full-stack take-home project for reviewing employee alerts across a management hierarchy. Django/DRF and React/TypeScript implement direct/subtree filtering, severity filters, pagination, and dismissal. A visited-set traversal guards against hierarchy cycles; API/model tests and related-object query loading support correctness and maintainability. Authorization enforcement and automated delivery remain areas to improve.
+A full-stack operational interface for reviewing employee alerts across a management hierarchy. Django/DRF and React/TypeScript implement direct/subtree filtering, bounded pagination, validation, and idempotent dismissal. Token authentication derives manager identity server-side, while object-level checks prevent cross-manager reads and dismissals. Green CI runs 14 backend tests with a coverage gate and an optimized React production build.
 
 ## Engineering Principles
 
