@@ -1,65 +1,47 @@
-# 👋 Hi, I'm Donatus Gwer  
+# Donatus Gwer — Full-Stack / Backend Engineer
 
-[![Hire Me](https://img.shields.io/badge/Hire%20Me-Contact-brightgreen?style=for-the-badge&logo=gmail)](mailto:donatusgwer@gmail.com)  
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-blue?style=for-the-badge&logo=linkedin)](https://www.linkedin.com/in/donatus-gwer-857610338)  
-[![Portfolio](https://img.shields.io/badge/Portfolio-Visit-orange?style=for-the-badge&logo=react)](https://gwerdev.donatusgwer.workers.dev/)  
+I build payment systems, operational software, secure APIs, automation, and internal business tools with Python and Django. My work focuses on reliable workflows: access boundaries, transaction correctness, reconciliation, auditability, and recovery when dependencies fail.
 
-🚀 **Python/Django Developer | Fullstack Enthusiast | Builder of Digital Solutions**  
+## Technical Stack
 
----
+- **Backend & data:** Python, Django, Django REST Framework, FastAPI, PostgreSQL, Redis, Celery, Kafka.
+- **Frontend:** React, Next.js, TypeScript.
+- **Delivery & operations:** Docker, GitHub Actions, container deployment configurations for Kubernetes and VPS environments; pytest, Django tests, linting and type checks.
+- **Security & observability:** role-based access control, tenant/workspace scoping, signed webhooks and audit records, encrypted integration credentials; Prometheus, Grafana, OpenTelemetry, structured logging.
 
-## ✨ About Me  
+## Featured Engineering Work
 
-I started coding with a clear mission: **to use technology to change lives**.  
+### 1. [Sentinel](https://github.com/Gwerdonatus/Sentinel) — Security and audit platform
 
-Growing up in Nigeria, I witnessed how communities and businesses struggled without the right digital tools. That inspired me to start building solutions that **empower people locally while scaling globally**.  
+Centralizes security events, risk signals, and audit trails for business applications. A modular Django/DRF backend separates services and repositories, with tenant-aware access, role permissions, API keys, and HMAC-signed audit records. Celery/Redis and Kafka support event processing; a Next.js interface exposes the workflows. Unit and integration tests, coverage-gated CI, container/Kubernetes configurations, monitoring configuration, architecture decisions, and incident runbooks demonstrate attention to operating the system.
 
-🌍 My focus is on creating impactful products — from financial inclusion platforms to secure marketplaces — that make everyday life better.  
+### 2. [TxCore](https://github.com/Gwerdonatus/txcore) — Payment processing prototype
 
----
+Explores transaction intake, settlement, and reconciliation as a backend system. Decimal transaction storage and database uniqueness underpin idempotency; Redis supports replay responses, HMAC validates incoming webhooks, Kafka publishes events, and Celery models settlement work. API and reconciliation tests, an 80% CI coverage gate, Docker Compose, and Prometheus metrics make the design inspectable. Settlement is simulated; provider integration and failure recovery still need hardening.
 
-## 🛠 Tech Stack  
-![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)  
-![Django](https://img.shields.io/badge/Django-092E20?style=for-the-badge&logo=django&logoColor=white)  
-![DRF](https://img.shields.io/badge/Django%20REST-ff1709?style=for-the-badge&logo=django&logoColor=white)  
-![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)  
-![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)  
-![Next.js](https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=next.js&logoColor=white)  
-![TailwindCSS](https://img.shields.io/badge/Tailwind-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)  
-![Bootstrap](https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white)  
-![PostgreSQL](https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white)  
-![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)  
+### 3. [drift-recon](https://github.com/Gwerdonatus/drift-recon) — Reconciliation and drift detection
 
----
+Helps identify discrepancies between financial data sources. The FastAPI service separates ingestion from a deterministic weighted matcher, prevents duplicate match assignments, and quarantines invalid CSV rows. PostgreSQL upserts, persistent scheduled jobs, API-key checks, structured logs, matcher/ingestion tests, and container deployment scripts support repeatable operation. CI and operational documentation need further work.
 
-## 📌 Featured Projects  
+### 4. [FinOps](https://github.com/Gwerdonatus/FinOps) — Refund and dispute operations
 
-- 🏦 **Naija Co-op Hub** – Digitizing *Adashe/Esusu* savings to promote **financial inclusion**, group investments, and peer-to-peer lending in Nigerian communities. *(Django, Paystack integration, chat, marketplace).*  
+Organizes financial support work around workspaces, case status, and SLA risk. Django modules handle Stripe synchronization, refund/dispute workflows, alerts, and CSV/PDF evidence exports. Encrypted integration credentials and workspace membership checks establish security boundaries; tests cover access isolation and exports. Background automation, CI, and provider integration validation are the next maturity steps.
 
-- 🎉 **JosEventia** – Escrow-backed marketplace for event vendors in Nigeria, built to foster **trust, transparency, and seamless booking/payments**. *(Django, Paystack, Vendor Profiles).*  
+### 5. [Ledgerlens-recon](https://github.com/Gwerdonatus/Ledgerlens-recon) — Focused payment reconciliation tool
 
-- 🛍 **Thriftbyzee** – Responsive e-commerce website for a fashion brand, improving client’s digital presence and customer engagement. *(Django, Bootstrap, JavaScript).*  
+Compares processor records with internal ledger data and produces actionable discrepancy reports. A small Python CLI keeps matching separate from Stripe/CSV/database adapters and Excel output, classifying missing records, amount mismatches, and matches deterministically. A matcher test and structured JSON logging provide a foundation for validation and diagnostics. This is scoped demonstration tooling, with broader edge-case coverage still needed.
 
-- 📦 [**Items API**](https://github.com/Gwerdonatus/items-api) – REST API with token authentication, CRUD, and GitHub Actions CI. Demonstrates **testing and automation skills**.  
+### 6. [alerts-monitoring-dashboard](https://github.com/Gwerdonatus/alerts-monitoring-dashboard) — Operational alerts interface
 
----
+A full-stack take-home project for reviewing employee alerts across a management hierarchy. Django/DRF and React/TypeScript implement direct/subtree filtering, severity filters, pagination, and dismissal. A visited-set traversal guards against hierarchy cycles; API/model tests and related-object query loading support correctness and maintainability. Authorization enforcement and automated delivery remain areas to improve.
 
-## 📊 GitHub Stats  
+## Engineering Principles
 
-![Gwerdonatus's GitHub stats](https://github-readme-stats.vercel.app/api?username=Gwerdonatus&show_icons=true&theme=tokyonight)  
+- **Start with the business workflow:** model states, responsibilities, exceptions, and operational needs before choosing infrastructure.
+- **Prefer a modular monolith:** separate domain boundaries clearly; introduce microservices when scale or team ownership justifies the cost.
+- **Treat payments as architecture:** account for transaction state, reconciliation, security, and audit trails throughout the system.
+- **Design for failure:** make retries, idempotency, auditability, and recovery explicit, and test the boundaries where work can be duplicated or interrupted.
 
-![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=Gwerdonatus&layout=compact&theme=tokyonight)  
+## Contact
 
----
-
-## 🌱 Currently Exploring  
-- Scaling Django with **async & Channels**  
-- Secure **payment integrations** (Paystack, Stripe)  
-- Microservices & **cloud deployments** (Vercel, Cloudflare, AWS)  
-
----
-
-## 📫 Let’s Connect  
-- 🌍 Portfolio: [donatusgwer.workers.dev](https://gwerdev.donatusgwer.workers.dev/)  
-- 💼 LinkedIn: [Donatus Gwer](https://www.linkedin.com/in/donatus-gwer-857610338)  
-- 📧 Email: **donatusgwer@gmail.com**  
+[Email](mailto:donatusgwer@gmail.com) · [LinkedIn](https://linkedin.com/in/donatus-gwer) · [Portfolio](https://donatus-gwer.vercel.app)
