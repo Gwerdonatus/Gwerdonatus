@@ -2,6 +2,20 @@
 
 I build payment systems, operational software, secure APIs, automation, and internal business tools with Python and Django. My work focuses on reliable workflows: access boundaries, transaction correctness, reconciliation, auditability, and recovery when dependencies fail.
 
+Based in Nigeria. Open to backend and full-stack opportunities, including international roles with relocation and visa support.
+
+## Open-source Contributions
+
+These upstream pull requests are **submitted and awaiting review**, not merged. Status checked 13 October 2026.
+
+| Project | Contribution | Verification |
+|---|---|---|
+| [Anymail #495](https://github.com/anymail/django-anymail/pull/495) | Document Django 6.1 MAILERS configuration, provider options and multiple backends | 1,242 local tests; upstream CI and documentation build passed |
+| [dj-stripe #2250](https://github.com/dj-stripe/dj-stripe/pull/2250) | Correct the Stripe Connect SDK argument and remove obsolete customer-source synchronization | 568 tests passed on both SQLite and PostgreSQL; Actions awaits maintainer approval |
+| [django-redis #851](https://github.com/jazzband/django-redis/pull/851) | Distinguish cached `None` from missing keys during version changes | 2,065 tests passed, 7 skipped; pre-commit.ci passed; Actions awaits maintainer approval |
+
+[Engineering case study: versioning a cached None value](case-studies/django-redis-cached-none.md)
+
 ## Technical Stack
 
 - **Backend & data:** Python, Django, Django REST Framework, FastAPI, PostgreSQL, Redis, Celery, Kafka.
@@ -13,19 +27,29 @@ I build payment systems, operational software, secure APIs, automation, and inte
 
 ### 1. [Sentinel](https://github.com/Gwerdonatus/Sentinel) — Security and audit platform
 
-Centralizes security events, risk signals, and audit trails for business applications. A modular Django/DRF backend separates services and repositories, with tenant-aware access, role permissions, API keys, and HMAC-signed audit records. Celery/Redis and Kafka support event processing; a Next.js interface exposes the workflows. Unit and integration tests, coverage-gated CI, container/Kubernetes configurations, monitoring configuration, architecture decisions, and incident runbooks demonstrate attention to operating the system.
+Records activity from people, services and AI agents, then links explainable risk alerts to triggering events and actor history. Django/DRF and Next.js support scoped API keys, credential-derived actor identity, versioned HMAC signatures, a transactional outbox and idempotent alert creation. The walkthrough shows synthetic AI-agent and human incidents; Sentinel does not move money or automatically block another application's actions. Local verification recorded 314 passing backend tests and 72.58% statement coverage.
 
-### 2. [TxCore](https://github.com/Gwerdonatus/txcore) — Payment processing prototype
+[Screenshots, scoring examples and setup](https://github.com/Gwerdonatus/Sentinel/tree/fix/reliable-audit-pipeline) · [Implementation PR](https://github.com/Gwerdonatus/Sentinel/pull/1)
 
-Explores transaction intake, settlement, and reconciliation as a backend system. Decimal transaction storage and database uniqueness underpin idempotency; Redis supports replay responses, HMAC validates incoming webhooks, Kafka publishes events, and Celery models settlement work. API and reconciliation tests, an 80% CI coverage gate, Docker Compose, and Prometheus metrics make the design inspectable. Settlement is simulated; provider integration and failure recovery still need hardening.
+### 2. [TxCore](https://github.com/Gwerdonatus/txcore) — Payment operations sandbox
+
+Implements caller-scoped idempotent payment intake, Stripe-hosted test Checkout, signed and deduplicated provider events, missed-webhook recovery, a transactional outbox and statement reconciliation. A real Stripe sandbox Checkout completed the verified local workflow; no live funds moved. The `settled` state means a verified paid Checkout session, not bank payout settlement. Local checks recorded 88 PostgreSQL tests and 91.34% application coverage in the SQLite suite.
+
+[Screenshots, provider workflow and setup](https://github.com/Gwerdonatus/txcore/tree/docs/recruiter-walkthrough) · [Implementation PR](https://github.com/Gwerdonatus/txcore/pull/1)
 
 ### 3. [drift-recon](https://github.com/Gwerdonatus/drift-recon) — Reconciliation and drift detection
 
-Helps identify discrepancies between financial data sources. The FastAPI service separates ingestion from a deterministic weighted matcher, prevents duplicate match assignments, and quarantines invalid CSV rows. PostgreSQL upserts, persistent scheduled jobs, API-key checks, structured logs, and operational runbooks support repeatable operation. Its green CI builds both API and dashboard images and runs 68 tests with a 70% coverage gate.
+Compares internal transactions with statement rows using an explainable weighted matcher, then flags changes in reconciliation quality. FastAPI/PostgreSQL ingestion includes duplicate protection, invalid-row quarantine and recorded human review. Read-only Stripe sandbox synchronization matched three independently imported TxCore payments totaling USD 33; it does not establish a bank deposit. Local verification recorded 87 backend tests and 77.01% coverage.
+
+[Screenshots, matching rules and setup](https://github.com/Gwerdonatus/drift-recon/tree/fix/recruiter-demo) · [Implementation PR](https://github.com/Gwerdonatus/drift-recon/pull/1)
 
 ### 4. [FinOps](https://github.com/Gwerdonatus/FinOps) — Refund and dispute operations
 
-Organizes financial support work around workspaces, case status, and SLA risk. Django modules handle Stripe synchronization, refund/dispute workflows, alerts, and CSV/PDF evidence exports. Encrypted integration credentials, workspace membership checks, POST-only mutations, and CSRF protection establish security boundaries. Its Python 3.11/3.12 CI verifies access isolation, exports, risk calculations, and workflow safety with a coverage gate.
+Helps a support team prioritize refund deadlines, investigate disputes and export PDF/CSV evidence summaries. Django workflows include workspace isolation, encrypted connector credentials, read-only Stripe sandbox imports and private attachments. Optional OpenAI case briefs require consent and exact supporting quotes; a real AI-provider call remains unverified because credentials are not configured. Local verification recorded 42 tests and 75.93% coverage. No provider refund or dispute submission is performed.
+
+[Screenshots, deadline rules and setup](https://github.com/Gwerdonatus/FinOps/tree/fix/recruiter-demo) · [Implementation PR](https://github.com/Gwerdonatus/FinOps/pull/1)
+
+The four walkthrough branches above contain the current demo updates; their implementation PRs remain unmerged. Screenshots use labelled synthetic data or Stripe test-mode records. Verification numbers describe recorded local runs, not production traffic or performance benchmarks.
 
 ### 5. [Ledgerlens-recon](https://github.com/Gwerdonatus/Ledgerlens-recon) — Focused payment reconciliation tool
 
@@ -44,4 +68,4 @@ A full-stack operational interface for reviewing employee alerts across a manage
 
 ## Contact
 
-[Email](mailto:donatusgwer@gmail.com) · [LinkedIn](https://linkedin.com/in/donatus-gwer) · [Portfolio](https://donatus-gwer.vercel.app)
+[Email](mailto:donatusgwer@gmail.com) · [LinkedIn](https://www.linkedin.com/in/donatus-gwer-857610338/) · [Portfolio](https://donatus-gwer.vercel.app)
