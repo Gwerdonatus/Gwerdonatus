@@ -4,6 +4,22 @@ I build payment systems, operational software, secure APIs, automation, and inte
 
 Based in Nigeria. Open to backend and full-stack opportunities, including international roles with relocation and visa support.
 
+## Product and Client Work
+
+### [Proova](https://proova.app) — Live-tested founder product
+
+I built and tested Proova live: a revenue-attribution product that connects campaign and influencer clicks to payments, including sales that continue through WhatsApp or other off-site channels. The implementation includes server-side event capture, CSV reconciliation, revenue reporting and Stripe/Paystack billing integrations. I own the product's API design, data models and deployment workflows. The public site currently offers early access; live testing is not a claim of established customer adoption.
+
+### Sinzu and Sanmark — Client websites
+
+Designed and built websites for client brands, including Sinzu and Sanmark. My website work also includes Stripe and Paddle payment integrations. These are client engagements, separate from the independent engineering projects below.
+
+### Blakdhut — Client crypto platform
+
+Built a crypto-to-naira platform with Django, a double-entry ledger, deposit processing, wallet APIs and Flutter mobile clients. Deposit and sweep workflows have recorded verification on TRON Shasta and Ethereum Sepolia testnets. The application is currently offline; this is not a claim of mainnet operation or a production launch.
+
+[Portfolio and engineering writing](https://www.gwer.space)
+
 ## Open-source Contributions
 
 These upstream pull requests are **submitted and awaiting review**, not merged. Status checked 13 October 2026.
@@ -23,7 +39,7 @@ These upstream pull requests are **submitted and awaiting review**, not merged. 
 - **Delivery & operations:** Docker, GitHub Actions, container deployment configurations for Kubernetes and VPS environments; pytest, Django tests, linting and type checks.
 - **Security & observability:** role-based access control, tenant/workspace scoping, signed webhooks and audit records, encrypted integration credentials; Prometheus, Grafana, OpenTelemetry, structured logging.
 
-## Featured Engineering Work
+## Selected Independent Engineering Projects
 
 ### 1. [Sentinel](https://github.com/Gwerdonatus/Sentinel) — Security and audit platform
 
@@ -68,4 +84,4 @@ A full-stack operational interface for reviewing employee alerts across a manage
 
 ## Contact
 
-[Email](mailto:donatusgwer@gmail.com) · [LinkedIn](https://www.linkedin.com/in/donatus-gwer-857610338/) · [Portfolio](https://donatus-gwer.vercel.app)
+[Email](mailto:donatusgwer@gmail.com) · [LinkedIn](https://www.linkedin.com/in/donatus-gwer-857610338/) · [Portfolio and blog](https://www.gwer.space)
