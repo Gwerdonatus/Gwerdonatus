@@ -22,7 +22,9 @@ Built a crypto-to-naira platform with Django, a double-entry ledger, deposit pro
 
 ## Open-source Contributions
 
-These upstream pull requests are **submitted and awaiting review**, not merged. Status checked 13 October 2026.
+[django-compressor #1345](https://github.com/django-compressor/django-compressor/pull/1345) was **merged on 16 October 2026**. It fixes offline discovery of compress blocks inside Jinja2 `elif` branches, with regression coverage for manifest generation, rendering and generated JavaScript.
+
+The pull requests below are **submitted and awaiting review**, not merged. Status checked 18 October 2026.
 
 | Project | Contribution | Verification |
 |---|---|---|
